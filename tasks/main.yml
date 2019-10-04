@@ -69,7 +69,6 @@
     src: "sudoers.j2"
     dest: "{{ item.path }}"
     owner: "root"
-    group: "root"
     mode: "0440"
     validate: '{{ sudoers_visudo_path }} -cf %s'
   with_items: "{{ sudoers_files }}"
