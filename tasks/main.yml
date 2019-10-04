@@ -7,6 +7,7 @@
   register: "sudo_installed"
   until: "sudo_installed is succeeded"
   become: True
+  when: "sudoers_skip_sudo_installed_check is not defined"
 
 - name: "Set include directories variable"
   set_fact:
